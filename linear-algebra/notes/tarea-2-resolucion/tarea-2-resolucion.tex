@@ -1,0 +1,281 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{pgfplots} % just 4 graphs lmao
+\pgfplotsset{compat = newest}
+\usepackage{amsmath}
+\begin{document}
+\textbf{1. Demostrar que las siguientes son transformaciones lineales.}
+
+1.$T(x)=\mathbb{R}^2\rightarrow\mathbb{R}^2, (x,y)\rightarrowtail(x,-y)$
+
+Sean $u$ y $v$ vectores en $\mathbb{R}^2$, tal que:$$u=(a,b)\ \ \ \ \ \ v=(c,d)$$
+
+Sabemos que si $\alpha T(u)+T(v)=T(\alpha u + v)$ entonces nuestra transformación es lineal.
+
+Primero vemos que obtenemos de $\alpha T(u)+T(v)$
+
+Aplicamos la transformación a $u$ y $v$: $$\alpha T(u)+T(v)= \alpha (a,-b) + (c,-d)$$
+Luego aplicamos la suma y producto por escalar definidos en $\mathbb{R}^2$: $$\alpha (a,-b) + (c,-d)=(\alpha a, \alpha(-b))+(c,d)=(\alpha a + c, \alpha(-b) - d)$$
+
+Ahora veremos que obtenemos de operar $T(\alpha u + v)$
+
+Aplicamos suma y producto por escalar definidos en $\mathbb{R}^2$: $$T(\alpha(a,b)+(c,d))=T((\alpha a,\alpha, b)+(c,d))=T((\alpha a + c, \alpha b+d))$$
+Aplicamos la transformación al vector resultante: $$T((\alpha a + c, \alpha b+d))=(\alpha a + c, -(\alpha b+d))$$
+Por propiedades de los números reales:$$(\alpha a + c, -(\alpha b+d))=(\alpha a + c,\alpha(-b)-d)$$
+
+Entonces podemos observar que $T(\alpha u + v)=(\alpha a + c, \alpha (-b)-d)=\alpha T(x)+T(v)$
+
+$$\therefore T(x)\ es\ lineal\triangle$$
+2.$T(x)=\mathbb{R}^2\rightarrow\mathbb{R}, (x,y)\rightarrowtail y$
+
+Siendo $u$ y $v$ vectores en $\mathbb{R}^2$, tales que: $$u=(a,b)\ \ \ \ \ \ v=(c,d)$$
+
+Sabemos que si $\alpha T(u)+T(v)=T(\alpha u + v)$ entonces $T(x)$ es lineal.
+
+Primero observaremos el resultado de evaluar $\alpha T(u) + T(v)$
+
+Aplicamos la transformación a los vectores:  $$\alpha T(u) + T(v)=\alpha T((a,b)) + T((c,d))=\alpha b+ d$$
+
+Ahora observaremos el resultado de evaluar $T(\alpha u + v)$
+
+Aplicamos la suma y producto por escalar definidos en $\mathbb{R}^2$: $$T(\alpha u + v)=T(\alpha (a,b) + (c,d))=T((\alpha a, \alpha b)+ (c,d))=T((\alpha a + c , \alpha b+d))$$
+
+Ahora aplicamos la transformación a nuestro resultado: $$T((\alpha a + c,\alpha b + d )= \alpha b + d$$
+
+Podemos apreciar luego de evaluar que: $$\alpha T(u)+T(v)=\alpha b + d=T(\alpha u + v)$$
+
+$$\therefore T(x)\ es\ lineal.\triangle$$
+
+3.$T(x)=\mathbb{R}\rightarrow\mathbb{R}^2, x\rightarrowtail (x,0)$
+
+Sean $u,v \in\mathbb{R}$ como espacio vectorial, sabemos que una transformación es lineal si $\alpha T(u)+ T(v)=T(\alpha u + v)$.
+
+Empezaremos evaluando $\alpha T(u)+ T(v)$
+
+Aplicamos la transformación a los vectores: $$\alpha T(u)+ T(v)=\alpha(u,0)+(v,0)$$
+
+Aplicamos la suma y producto por escalar definidos en $\mathbb{R}^2$: $$\alpha(u,0)+(v,0)=(\alpha u,\alpha 0)+(v,0)=(\alpha u + v, \alpha 0 + 0)$$
+
+Aplicamos propiedades de $\mathbb{R}$: $$(\alpha u + v, \alpha 0 + 0)=(\alpha u + v, 0)$$
+
+Ahora evaluaremos $T(\alpha u + v)$
+
+Notamos que $\alpha u + v$ ya es operable por si mismo, por lo cual sólo le aplicamos la transformación: $$T(\alpha u + v)=(\alpha u + v,0)$$
+
+Podemos apreciar que: $$\alpha T(u) + T(v)=(\alpha u + v, 0)=T(\alpha u + v)$$
+
+$$\therefore T(x)\ es\ lineal.\triangle$$
+
+\pagebreak
+\textbf{2. Sea $T: V\rightarrow W$ una transformación lineal , entonces $T(0_{v})=0_{w}$}
+
+Empezaremos la demostración suponiendo $\vec{x}\in V$ lo cual implica que $T(x)\in W$
+
+Sabemos por propiedad de los espacios vectoriales que $0*\vec{x} = 0_{v}$
+
+Lo mismo aplica para $T(x)$, pues $W$ es un espacio vectorial, entonces se cumple que  $0*T(\vec{x})=0_{w}$
+
+Y con esto se puede deducir que: $$T(0_{v})=T(0*\vec{x})$$
+
+Y como $T$ es lineal, entonces: $$\Rightarrow T(0_{v})=T(0*\vec{x})=0*T(\vec{x})=0_{w}$$
+
+$$\therefore T(0_{v})=0_{w}\ cuando \ T\ es \ transformacion\ lineal\blacksquare$$
+
+
+\textbf{4. Supón que $T: \mathbb{R}^2 \rightarrow \mathbb{R}^2$ es lineal con $T(1,0)=(1,4)$ y $T(1,1)=(2,5)$. Calcula $T(2,3)$ y muestra si $T$ es inyectiva o no.}
+
+Sabemos por el corolario del teorema de la dimensión que si $T: V \rightarrow W $ es lineal y tenemos una base de V tal que $\beta = \{x_{1},...,x_{n} \}$, entonces $R(T)=L(T(\beta))=L(\{T(x_{1}),...,T(x_{n}\}))$ 
+
+Entonces sabiendo que $T: \mathbb{R}^2 \rightarrow \mathbb{R}^2$ es lineal con $T(1,0)=(1,4)$ y $T(1,1)=(2,5)$, podemos tomar (1,0) y (1,4) como elementos de la base de $\mathbb{R}^2$ y a su vez vemos que (1,4) y (2,5) son elementos de la base de $\mathbb{R}^2$
+
+Entonces por ser bases, sabiendo que generan a $T((2,3)$ buscamos $T((2,3)= T(a(1,0)+b(1,1))$
+
+Buscamos los escalares tales que $(2,3)=a(1,0)+b(1,1)=(a,0)+(b,b)$ con un sistema de ecuaciones: $$2=a+b$$ $$3=0+b$$ 
+
+De lo cual obtenemos que $a=-1$ y $b=3$ por lo cual: $$T((2,3))=T(-1(1,0)+3(1,1))$$$$=-1T((1,0))+3T((1,1))=-1(1,4)+3(2,5)$$$$=(5,11)$$
+
+Ahora para ver si $T$ es inyectiva, sabemos que $T$ es inyectiva si $N(T)=\{0_{v}\}$
+
+Recordando que \{(1,0),(1,1)\} es base de V, entonces buscamos la combinación tal que $T(x)=0_{w}=(0,0)$
+
+Sabiendo que $T(x)=T(a(1,0)+b(1,1))=a(T(1,0))+b(T(1,1))=a(1,4)+b(2,5)$
+
+Buscamos los escalares tales que $(0,0)=a(1,4)+b(2,5)=(a,4a)+(b,5b)$ con un sistema de ecuaciones: $$0=a+2b$$ $$0=4a+5b$$ al cual le asociamos una matriz:
+\begin{equation}
+\begin{pmatrix}
+1 & 2 & 0\\
+4 & 5 & 0
+\end{pmatrix}
+\end{equation}
+
+La cual al reducirla por Gauss-Jordan obtenemos:
+\begin{equation}
+\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0
+\end{pmatrix}
+\end{equation}
+
+Por lo cual $a=0$ y $b=0$  por lo que $(0,0)=T(a(1,0)+b(1,1))=T(0(1,0)+0(1,1))=T(0,0)$
+
+$$\therefore T\ es\ inyectiva\triangle$$
+
+\textbf{5. Sea $T: \mathbb{R}^3 \rightarrow \mathbb{R}^2$ con $T((1,0,3))=(1,1)$ y $T((-2,0-6))=(2,1)$. ¿Puede T ser lineal?}
+
+Vamos a suponer que $T$ es lineal, entonces sabemos que $T((1,0,3))=(1,1)$ y $T((-2,0-6))=(2,1)$
+
+Aplicando producto por escalar se supone que si T es lineal, entonces pasa que $aT((1,0,3))=T(a(1,0,3))$, de forma truculenta usaremos $a = -2$, primero evaluaremos $-2T(1,0,3)$:
+
+$$-2T((1,0,3))=-2(1,1)=(2,-2)$$
+
+Ahora evaluaremos $T(-2(1,0,3))$:
+
+$$T(-2(1,0,3))=T((-2,0,6))=(2,1)$$
+
+Pero notamos que (2,1) $\neq$ (2,-2) por lo cual $T$ no es lineal.
+
+$$\therefore T\ no\ es\ lineal\triangle$$
+
+\pagebreak
+\textbf{6.Sea $T: \mathbb{R}[x] \rightarrow \mathbb{R}[x]: f\rightarrow f'$. Muestra que $T$ es lineal.}
+
+Si $T$ es lineal, entonces $T(f+g)=T(f)+T(g)$ y $T(cf)=cT(f)$
+
+Sabemos que $T(f+g)=(f+g)'=f'+g'=T(f)+T(g)$, por lo cual se cumple la primera condición.
+
+Sabemos por calculus que $cT(f)=cf'=T(cf)$, por lo cual se cumple la segunda condición.
+
+$$\therefore T\ es\ lineal\blacksquare$$
+
+\textbf{7. Muestra que la anterior transformación $T$ (si es que lo es) no es inyectiva.}
+
+Sabemos que si $T$ es inyectiva, entonces $N(T)=\{0_{v}\}$
+
+En este caso el $0_{v}$ es el polinomio nulo, por lo cual buscamos el polinomio tal que $T(f)=0_{v}=0$
+
+Sabemos que $T(f)=f'=0$, por lo cual buscamos el polinomio tal que $f'=0$
+
+Por métodos básicos de integración sabemos que $f'=0$ cuando $f=c$ con $c$ una constante, por lo cual $T(f)=0$ cuando $f=c$
+
+Eso implica que el núcleo de $T$ es el conjunto de todos los polinomios constantes, por lo cual $N(T)\neq\{0_{v}\}$
+
+$$\therefore T\ no\ es\ inyectiva\blacksquare$$
+
+\textbf{8. Sean V y W espacios vectoriales de dimensión finita y $T: V \rightarrow W$ lineal.}
+
+\textbf{a) Si $dim(V)<dim(W)$ entonces $T$ no puede ser suprayectiva.}
+
+Sabemos que si $T$ es suprayectiva, entonces $R(T)=W$
+
+Lo cual implica que $dim(R(T))=dim(W)$
+
+Por el teorema del a dimensión sabemos que $dim(R(T)) = dim(V)-dim(N(T))$ por lo cual si suponemos que T es suprayectiva, entonces $dim(V)-dim(N(T))=dim(W)$
+
+Pero sabemos que $dim(V)<dim(W)$, por lo cual $dim(V)-dim(N(T))<dim(W) (!) $
+
+$$\therefore T\ no\ es\ suprayectiva\blacksquare$$
+
+\pagebreak
+\textbf{b) Si $dim(V)>dim(W)$ entonces $T$ no puede ser inyectiva.}
+
+Sabemos que si $T$ es inyectiva, entonces $N(T)=\{0_{v}\}$
+
+Suponiendo que $T$ es inyectiva, entonces $dim(N(T))=0$ y por el teorema de la dimensión sabemos que $dim(N(T))=dim(V)-dim(R(T))$ lo cual implicaría que $dim(V)=dim(R(T))$
+
+Pero sabemos que $dim(V)>dim(W)$, y sabemos que $dim(R(T))\leq dim(W)$, por lo cual es una contradicción $(!)$, entonces $dim(V)>dim(R(T))$.
+$$\therefore T\ no\ es\ inyectiva\blacksquare$$
+
+\textbf{10. Sea $V$ un espacio vectorial de dimensión finita y $W\leq V$, entonces existe una proyección sobre $W$}
+
+Si $W\leq V$ entonces $\exists W'=(V-W)\cup\{0\}$ tal que $V=W\oplus W'$
+
+Sea $v\in V$, entonces $v=w+w'$ con $w\in W$ y $w'\in W'$
+
+Definimos $T:V\rightarrow V$ como $T(v)=w$, entonces $T(v)=w, w\in W$ y $T(v)=v-w', w'\in W'$
+
+Por lo cual $T(v)=w$ es una proyección sobre $W$
+
+$$\therefore\ existe\ una\ proyecci\Acute{o}n\ sobre\ W\blacksquare$$
+
+\textbf{11. Sea $T: \mathbb{R}^3 \rightarrow \mathbb{R}$ lineal demuestra que existen escalares $a,b,c$ tales que $T((x,y,z))=ax+by+cz$ para toda $x,y,z \in \mathbb{R}^3$}
+
+Sabemos que $T$ es lineal, por lo cual $$T((x,y,z))=T(x(1,0,0)+y(0,1,0)+z(0,0,1)$$
+$$=xT((1,0,0))+yT((0,1,0))+zT((0,0,1))$$
+
+Y suponiendo $a,b,c \in \mathbb{R}$ tal que $a=T((1,0,0)), b=T((0,1,0)), c=T((0,0,1))$ entonces: $$T((x,y,z))=xT((1,0,0))+yT((0,1,0))+zT((0,0,1))=ax+by+cz$$
+
+$$\therefore\ existen\ escalares\ a,b,c\ tales\ que\ T((x,y,z))=ax+by+cz\blacksquare$$
+
+\textbf{12. Muestra que si F es un campo, se puede generalizar lo anterior para cualquier transformación lineal $T: F^n \rightarrow F$}
+
+Supongamos un vector $(x_1,x_2,...,x_n)\in F^n$, entonces: $$T((x_1,x_2,...,x_n))=T(x_1(1,0,...,0)+x_2(0,1,...,0)+...+x_n(0,0,...,1))$$
+
+Y al $T$ ser lineal: $$T((x_1,x_2,...,x_n))=x_1T((1,0,...,0))+x_2T((0,1,...,0))+...+x_nT((0,0,...,1))$$
+
+Y suponiendo $a_1,a_2,...,a_n \in F$ tal que $\\ a_1=T((1,0,...,0)), a_2=T((0,1,...,0)), ..., a_n=T((0,0,...,1))$ entonces: $$T((x_1,x_2,...,x_n))=x_1T((1,0,...,0))+x_2T((0,1,...,0))+...+x_nT((0,0,...,1))$$
+$$=a_1x_1+a_2x_2+...+a_nx_n$$
+
+$$\therefore\ existen\ escalares\ a_1,a_2,...,a_n\ tales\ que\ T((x_1,x_2,...,x_n))$$$$=a_1x_1+a_2x_2+...+a_nx_n\blacksquare$$
+
+\textbf{13. Sea V un espacio vectorial y $T: V \rightarrow V$ lineal, diremos que $W\leq V$ es un subespacio $T$ invariante si $T(W)\subseteq W$}
+
+\textbf{a) Prueba que los subespacios $\{0\}, V, N(T), R(T)$ son todos $T$ invariantes}
+
+\textbf{Subespacio $\{0\}$:}
+
+Sea $0 \in W={0}$ sabemos que $T(0_{v})=0_{v} y 0_{v} \in W$ por lo cual $T(W)\subseteq W$ 
+
+\textbf{Subespacio $V$:}
+
+En primera instancia tenemos por hipótesis que $V\leq W$ y que $W\leq V$, por lo cual $V=W$ y siendo una transformación de $V$ a $V$, entonces sea $v\in V$, sabemos que $R(T)\leq V$, por lo tanto
+$T(v)\in R(T)$ y $R(T)\leq V$, por lo cual $T(v)\in V$ y $T(W)\subseteq W$
+
+\textbf{Subespacio $N(T)$:}
+
+Sabemos por definición de la nulidad que $N(T)\leq V$, por lo cual sea $v\in N(T)$, entonces $T(v)=0_{v}$ y $0_{v}\in N(T)$, pues en este caso y por ser T lineal, $T(0_{v})=0_{v}$ y $0_{v}\in N(T)$, por lo tanto $T(N(T))\subseteq N(T)$
+
+\textbf{Subespacio $R(T)$:}
+
+Sabemos por definición del rango que $R(T)\leq V$, por lo cual sea $v\in R(T)$, entonces $T(v)=v'$ y $v'\in R(T)$,
+por lo tanto $T(R(T))\subseteq R(T)\blacksquare$
+
+\pagebreak
+\textbf{b) Si T es una proyección sobre W, muestra que W es un subespacio T invariante.}
+
+Sabemos por definición de proyección que existe $W' | W\oplus W'$, y que $W=R(T)$, entonces como ya demostramos que $R(T)$ es $T$ invariante eso implica que $W$ es $T$ invariante.$\blacksquare$
+
+\textbf{c) Si $V=Im(T)\oplus W$ y $W$ es $T$ invariante, prueba que $W\subseteq N(T)$}
+
+Sabemos que $T(v)\in Im(T)$ y por definición de $T$ invariante sabemos que $T(W)\subseteq W$, pero $T(w) \in Im(T), w\in W$, entonces $T(w)\in W \cap Im(T)={0}$
+
+Entonces $T(w)=0_{v}$ y $w\in N(T)$, por lo tanto $W\subseteq N(T)\blacksquare$
+
+\textbf{d) En "c" si $V$ es de dimensión finita, entonces $W=N(T)$.}
+
+
+
+
+
+\textbf{14. Sean $V,W$ espacios $\mathbb{Q}$-vectoriales y $T: V \rightarrow W$. Muestra que basta con que $\forall x,y \in V$, $T(x+y)=T(x)+T(y)$ para que $T$ sea lineal.} 
+
+Sea $x \in V$ y $a \in \mathbb{Q}$ y $$T(x+y)=T(x)+T(y)$$
+
+Representaremos $\alpha \in \mathbb{Q}$ como $\alpha=m/n$ con $m,n \in \mathbb{Z}$
+
+Sea $\frac{m}{n} T(x)=m(\frac{1}{n}T(x)=_{m\ veces}\{\frac{1}{n}T(x)+\frac{1}{n}T(x)+...+\frac{1}{n}T(x)$
+
+$$=T(_{m\ veces}\{\frac{1}{n}x + \frac{1}{n} + ... + \frac{1}{n}x)=T(\frac{m}{n}x)$$
+
+Entonces se cumple que $\frac{m}{n}T(x)=T(\frac{m}{n}x)$
+
+O sea que $T(\alpha x)=\alpha T(x)$ y $T(x+y)=T(x)+T(y)$.
+
+Por lo tanto $T$ es lineal.$\blacksquare$
+
+\textbf{15. Sea $T$ una transformación lineal. Muestra que $T$ es inyectiva si y solo si la imagen de de cualquier subconjunto linealmente independiente bajo $T$ vuelve a ser linealmente independiente.}
+
+\textbf{a) Supongamos que $T$ es inyectiva y sea $S$ un subconjunto linealmente independiente de $V$. Muestra que $T(S)$ es linealmente independiente.}
+
+\end{document}

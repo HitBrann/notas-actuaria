@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{pgfplots} % just 4 graphs lmao
+\pgfplotsset{compat = newest}
+\begin{document}
+Ejemplo I
+
+Sea $X$ v.a con f.d.p
+$FX(x)=Deffunc FX(x)= 1-$ $\frac{6}{\pi ^2 x^2}$ 2. e.o.c
+
+
+Encontrar la f.h.m de X
+
+$M_X(t)=E(e^tx)=\sum_{x=1}^{\infty}e^{tx} *\frac{6}{\pi ^2 x^2}=\frac{6}{\pi ^2 x^2}\sum_{x=1}^{\infty}\frac{e^{tx}}{x^2}$ (*)
+
+(*)$c \sum_{x=1}^{\infty}(\frac{e^{tx}}{x^2})$ es convergente?
+
+Sea $a_{n}:= \frac{e^{tn}}{n^2} , n\in \mathbb{N}-{0}$
+
+$\frac{a_{n}+1}{a_{n}}= \frac{e^{t(n+1)}}{(n+1)^2} * \frac{n^2}{e^{tn}}=(\frac{n^2}{n+1})^2 * e^t \rightarrow _{n\rightarrow \infty} e^t$
+
+si $t<0 \Rightarrow e^t<1$
+
+si $t>0 \Rightarrow e^t>1$
+
+Ent. todo $t\in B (0), todo \in>0, \not\exists Mx(t)$
+
+$(-\in,\in)$
+
+Ejemplo 2. Sea $X$ 
+
+
+
+v.a con f.d.p $fX(x)=1.4e^{-4x} si x>0, =0 e. o. c$
+
+
+Ejemplo III
+
+Sea X v.a con funcion de densidad y probabilidad $f_{X}(x)=1.1/2x si x\in\mathbb{N}-\{0\} 2. 0 e.o.c$
+
+Encontrar $E(X)$:
+sol.
+$E(x)=sum_{x=1}^{\infty}\frac{x}{2^x}= \frac{1}{2}+\frac{2}{2^2}+\frac{3}{2^3}+...$
+
+sea $a_{n}:=\frac{n}{2^n}\Rightarrow \frac {a_{n+1}}{an}=\frac{n+1}{2^{n+1}}*\frac{2^n}{n}$
+
+$=\frac{1}{2} * (\frac{n+1}{n})\rightarrow \frac{1}{2}<+\infty_{n\rightarrow\infty}$
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+

@@ -1,0 +1,101 @@
+
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{pgfplots} % just 4 graphs lmao
+\pgfplotsset{compat = newest}
+\begin{document}
+\title{Relational algebra cheat sheet}
+\author{by Art. Delgadillo}
+\maketitle
+
+$Relacion=tabla$
+
+\textbf{Los renglones duplicados se eliminan}
+
+\textbf{Selection $\mathbf{\sigma}$:} Selecciona las tuplas que cumplen con un operador lógico.
+
+Notación: $ \sigma _{predicado}(R)\ \ \ \ \ _{R=Relacion}$
+
+\textbf{Projection $\mathbf{\pi}$:} Obtiene una relación a partir de R elimina los atributos que no estén en la lista de atributos.
+
+Notación: $\pi _{lista\ de\ atributos}(R)\ \ \ \ \ _{R=Relacion}$
+
+\vspace{5mm}
+\centerline{\textbf{---Composiciones verticales---}}
+
+\textbf{Union/Concatenación $\cup$:} Une las tuplas de manera vertical y elimina duplicados.
+
+Notación: $R\cup S\ \ \ _{R\ y\ S\ son\ relaciones}$
+
+Solo es realizable con relaciones compatibles.
+
+Nota \textbf{(relaciones compatibles)}: Las relaciones deben tener el mismo grado (numero de atributos), mismo nombre de atributos y mismo dominio(valores que puede tomar cada atributo)
+
+
+\textbf{Subtraction $-$:} Devuelve las tuplas que están en R pero no están en S.
+
+
+Notación: $R-S\ \ \ _{R\ y\ S\ son\ relaciones}$
+
+Solo realizable con relaciones compatibles.
+
+\textbf{Intersection $\cap$:} Es una relación con las tuplas que están en R y también están en S al mismo tiempo.
+
+Notación: $R\cap S\ or\ R-(R-S)\ \ \ _{R\ y\ S\ son\ relaciones}$
+
+Solo realizable en relaciones compatibles.
+
+\pagebreak
+\centerline{\textbf{---Composiciones horizontales---}}
+
+\textbf{Product $\times$:} Une las tuplas de manera horizontal de tal forma que cada tupla de R se concatena con cada tupla de S.
+
+Notación: $R\times S\ \ \ _{R\ y\ S\ son\ relaciones}$
+
+Nota: conviene renombre los atributos de R y S para evitar ambigüedad.
+
+\textbf{Join Natural $\bowtie$:} Une las tuplas de manera horizontal de tal forma que cada tupla de R se concatena con cada tupla de S con atributos en común.
+
+Notación: $R\bowtie S\ \ \ _{R\ y\ S\ son\ relaciones}$
+
+Nota: Si no hay atributos en común, el resultado es el producto cartesiano.
+
+\textbf{Theta Join $\bowtie _{condicion}$:} Une las tuplas de manera horizontal de tal forma que cada tupla de R se concatena con cada tupla de S con atributos en común y que cumplan con la condición.
+
+Se puede construir con producto cartesiano y seleccionando las tuplas que cumplan con la condición.
+
+Notación: $R\bowtie _{condicion} S\ \ \ _{R\ y\ S\ son\ relaciones}$
+
+\textbf{Outer Join $\bowtie _{condicion} ^{+}$:} Une las tuplas de manera horizontal de tal forma que cada tupla de R se concatena con cada tupla de S con atributos en común y que cumplan con la condición. Además, se incluyen las tuplas de R que no tienen correspondencia en S y viceversa.
+
+Notación: $R=\bowtie _{condicion} ^{+} S, R\bowtie _{condicion} ^{+} =S, R=\bowtie _{condicion} ^{+} =S\\$
+R y S son relaciones donde se representan outer join izquierdo, derecho y completo respectivamente.
+
+La operación de outer join por la izquierda conserva las tuplas de R que no tienen correspondencia en S.
+
+La operación de outer join por la derecha conserva las tuplas de S que no tienen correspondencia en R.
+
+La operación  de outer join completo conserva las tuplas de R y S que no tienen correspondencia en la otra relación.
+
+Los atributos que no tienen correspondencia se llenan con NULL.
+
+Útil para encontrar tuplas que no tienen correspondencia en la otra relación.
+
+\pagebreak
+\centerline{\textbf{---Operaciones sobre una relación---}}
+
+\textbf{Rename $\rho$:} Cambia el nombre de los atributos de una relación.
+
+Notación: $\rho _{nuevo\ nombre}(R)\ \ \ _{R=Relacion}$
+
+
+
+
+
+
+
+
+
+\end{document}
