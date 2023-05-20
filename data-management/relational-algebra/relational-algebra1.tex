@@ -90,12 +90,65 @@ Los atributos que no tienen correspondencia se llenan con NULL.
 
 Notación: $\rho _{nuevo\ nombre}(R)\ \ \ _{R=Relacion}$
 
+Asigna un nuevo nombre a la relación. No se obtiene una nueva relación.
 
+\textbf{Alias $\rho$:} Cambia el nombre de los atributos de una relación.
 
+Notación: $\rho _{nuevo\ nombre\leftarrow atributo} (R)\ \ \ _{R=Relacion}$
 
+Asigna un nuevo nombre a un atributo de la relación. No se obtiene una nueva relación.
 
+\vspace{5mm}
+\centerline{\textbf{---Operaciones de resumen---}}
 
+\textbf{Group by $\gamma$:} Agrupa las tuplas de una relación de acuerdo a un atributo y realiza una operación de resumen sobre cada grupo.
 
+Notación: $\gamma _{atributo; operacion\ de\ resumen\rightarrow alias}(R)\ \ \ _{R=Relacion}$
 
+Ninguna operación de resumen considera los valores NULL.
 
+Ejemplos de operaciones de resumen: COUNT, SUM, AVG, MAX, MIN.
+
+\textbf{Order by $\tau$:} Ordena las tuplas de una relación de acuerdo a un atributo.
+
+Notación: $\tau _{atributo0[asc|desc],atributo1[asc|desc],...}(R)\ \ \ _{R=Relacion}$
+
+Devuelve a la relación R ordenada de acuerdo a los atributos especificados.
+
+Comienza a ordenar por el atributo0, si hay valores iguales, ordena por el atributo1 y así sucesivamente.
+
+Ascendente siempre es el valor por defecto.
+
+Solo tiene sentido como operador final de una expresión.
+
+\textbf{Division $\div$:} Devuelve las tuplas de R que están relacionadas con todas las tuplas de S.
+
+Notación: $R\div S\ \ \ _{R\ y\ S\ son\ relaciones}$
+
+Crea una relación con los atributos de R que se corresponden con todos los atributos de S.
+
+\vspace{5mm}
+\centerline{\textbf{---Mantenimiento de datos---}}
+
+\textbf{Delete:} Elimina tuplas de una relación.
+
+Notación: $R=R-e \ \ \ _{R=Relacion\ \ e=tupla\ o\ resultado\ de\ una\ consulta}$
+
+La tupla debe tener el mismo grado que la relación y con los valores en los dominios correspondientes.
+
+\pagebreak
+
+\textbf{Insert:} Inserta tuplas en una relación.
+
+Notación: $R= R\cup e \ \ \ _{R=Relacion\ \ e=tupla\ o\ resultado\ de\ una\ consulta}$
+
+La tupla debe tener el mismo grado que la relación y con los valores en los dominios correspondientes.
+
+\textbf{Update:} Actualiza tuplas de una relación.
+
+$BORRADO + INSERCION$
+
+Se borran las tuplas que cumplen con la condición y se insertan las tuplas con los nuevos valores.
+
+Se suele utilizar el operador de proyección generalizado, donde en la lista de atributos se especifican los atributos que no se van a actualizar y en la lista de expresiones se especifican los nuevos valores.
 \end{document}
